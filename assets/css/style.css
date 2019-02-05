@@ -1,0 +1,96 @@
+@font-face { font-family: jedi0; src: url('fonts/Starjedi.ttf'); } 
+@font-face { font-family: jedi1; src: url('fonts/SF_Distant_Galaxy_Alternate.ttf'); } 
+@font-face { font-family: jedi2; src: url('fonts/SF_Distant_Galaxy_Alternate_Italic.ttf'); } 
+@font-face { font-family: jedi3; src: url('fonts/SF_Distant_Galaxy_Outline_Italic.ttf'); } 
+@font-face { font-family: jedi4; src: url('fonts/Starjedi.ttf'); } 
+
+
+h4{
+    font-family: jedi0;
+}
+
+#one{
+    font-family: jedi1;
+}
+
+#two{
+    font-family: jedi2;
+}
+
+#three{
+    font-family: jedi3;
+}
+
+.center{
+    text-align: center;
+
+}
+
+.y{
+    color:yellow;
+}
+
+body{
+background-image:url('../images/stars.jpg');
+}
+
+p{
+    text-align: left;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 60vw;
+    object-fit: cover;
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+    /* body{
+        background-color: red;
+    } */
+    .card-img-top {
+        width: 100%;
+        height: 50vw;
+        object-fit: cover;
+    }
+ }
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    /* body{
+        background-color: orange;
+    }  */
+    .card-img-top {
+        width: 100%;
+        height: 45vw;
+        object-fit: cover;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* body{
+        background-color: yellow;
+    } */
+    .card-img-top {
+        width: 100%;
+        height: 17vw;
+        object-fit: cover;
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* body{
+        background-color: blue;
+    }  */
+
+    .card-img-top {
+        width: 100%;
+        height: 19vw;
+        object-fit: cover;
+    }
+
+    
+}
