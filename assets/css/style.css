@@ -25,14 +25,14 @@
 
 }
 
-.zoom{
+/* .zoom{
     transition: transform .2s;
 }
 .zoom:hover {
-    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) 
     z-index: 2;
     border: solid 2px yellow;
-  }
+  }  */
 
 body{
 background-image:url('../images/stars.jpg');
@@ -83,7 +83,7 @@ p{
         transition: transform .2s;
     }
     .zoom:hover {
-         transform: scale(1.0); /*(150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+         transform: scale(1.0); /*No Zoom*/
         /* z-index: 2; */
         border: solid 2px yellow;
       }
@@ -103,7 +103,7 @@ p{
         transition: transform .2s;
     }
     .zoom:hover {
-        transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        transform: scale(1.2); /* (120% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
         z-index: 2;
         border: solid 2px yellow;
       }

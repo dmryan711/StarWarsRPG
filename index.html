@@ -14,6 +14,7 @@
 </head>
 <body>
     <div class="container" id="player-selection-container">
+           
         <!--TITLE ROW-->
         <div class="row">
             <div class="col-md-12">
@@ -31,7 +32,7 @@
         <!--ROW 1-->
         <div class="row"> 
             <!--LUKE SKYWALKER--> 
-            <div class="card zoom player-selection-card mx-auto mb-2 col-sm-12 col-md-12 col-lg-4">
+            <div class="card  zoom player-selection-card mx-auto mb-2 col-sm-12 col-md-12 col-lg-4">
                 <img class="card-img-top mx-auto"  src="assets/images/lukeSkyWalker.jpg" alt="Card image cap">  
                 <div class="card-body">
                     <h5 class="card-title center" id="jedi">Luke Skywalker</h5>
@@ -168,7 +169,17 @@
 
     </div>
         
-     
+   <!--AUDIO--> 
+    <audio id="saber" preload="auto">
+        <source src="assets/audio/ltsaberswing05.wav"></source>
+    </audio>
+
+    <audio  id="starWarsThemeSong" loop="loop">
+        <source src="assets/audio/star-wars-theme-song.mp3"></source>
+    </audio>
+
+   
+
     <!--BOOTSTRAP JS-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
