@@ -48,10 +48,10 @@ function toggleSelectionOrBattleContainer(element){
 //     $battleContainer.toggle();
 // }
 
-// function playSelectionAudio(){
-//     var audio = $("#saber") //PERSONALIZED AUDIO CLIPS HERE
-//     audio.trigger('play');
-// }
+function playSelectionAudio(){
+    var audio = $("#saber") //PERSONALIZED AUDIO CLIPS HERE
+    audio.trigger('play');
+}
 
 
 $(document).ready(function(){
