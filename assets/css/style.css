@@ -5,30 +5,34 @@
 @font-face { font-family: jedi4; src: url('fonts/Starjedi.ttf'); } 
 
 
-h4{
+.jedi-zero{
     font-family: jedi0;
+    color:yellow;
 }
 
-#one{
+.hidden{
+    display: none;
+}
+
+
+#jedi{
     font-family: jedi1;
 }
 
-#two{
-    font-family: jedi2;
-}
-
-#three{
-    font-family: jedi3;
-}
 
 .center{
     text-align: center;
 
 }
 
-.y{
-    color:yellow;
+.zoom{
+    transition: transform .2s;
 }
+.zoom:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    z-index: 2;
+    border: solid 2px yellow;
+  }
 
 body{
 background-image:url('../images/stars.jpg');
@@ -54,6 +58,15 @@ p{
         height: 50vw;
         object-fit: cover;
     }
+
+    .zoom{
+        transition: transform .2s;
+    }
+    .zoom:hover {
+        transform: scale(1.0); /*(150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        /* z-index: 2; */
+        border: solid 2px yellow;
+      }
  }
 
 /* // Medium devices (tablets, 768px and up) */
@@ -66,6 +79,14 @@ p{
         height: 45vw;
         object-fit: cover;
     }
+    .zoom{
+        transition: transform .2s;
+    }
+    .zoom:hover {
+         transform: scale(1.0); /*(150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        /* z-index: 2; */
+        border: solid 2px yellow;
+      }
 }
 
 /* // Large devices (desktops, 992px and up) */
@@ -78,6 +99,14 @@ p{
         height: 17vw;
         object-fit: cover;
     }
+    .zoom{
+        transition: transform .2s;
+    }
+    .zoom:hover {
+        transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        z-index: 2;
+        border: solid 2px yellow;
+      }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
@@ -87,10 +116,25 @@ p{
     }  */
 
     .card-img-top {
-        width: 100%;
-        height: 19vw;
-        object-fit: cover;
+       /* max-width: 134px;
+        max-height:288px; */
+        width:90%;
+         height: 9vw;
+        object-fit: cover; 
     }
+
+    .card{
+        max-width:300px;
+        max-height:288px;
+    }
+    .zoom{
+        transition: transform .2s;
+    }
+    .zoom:hover {
+        transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        z-index: 2;
+        border: solid 2px yellow;
+      }
 
     
 }
