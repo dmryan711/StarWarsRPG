@@ -9,17 +9,21 @@
    
     <!--CUSTOM CSS-->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--FAVICON-->
+    <link rel=icon href="assets/images/logo.jpeg">
+
     <title>Star Wars RPG</title>
     
 </head>
 <body>
-    <div class="container" id="player-selection-container">
+    <div class="container hidden" id="player-selection-container">
            
         <!--TITLE ROW-->
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-sm-12 col-md-12 col-lg-12">
                 <br>
-                <h1 class="jedi-zero center" >STAR WARS RPG</h1>
+                <h1 class="jedi-zero center">STAR WARS RPG</h1>
                 <h3 class="jedi-zero center">Choose Your Character</h3>
                 <!-- <h3 class="center y" id="one">STAR WARS RPG</h3>
                 <h2 class="center y" id="two">STAR WARS RPG</h2>
@@ -30,12 +34,12 @@
         <!--END OF TITLE ROW-->
 
         <!--ROW 1-->
-        <div class="row"> 
+        <div class="row" id="character-row-one"> 
             <!--LUKE SKYWALKER--> 
             <div class="card  zoom player-selection-card mx-auto mb-2 col-sm-12 col-md-12 col-lg-4">
                 <img class="card-img-top mx-auto"  src="assets/images/lukeSkyWalker.jpg" alt="Card image cap">  
                 <div class="card-body">
-                    <h5 class="card-title center" id="jedi">Luke Skywalker</h5>
+                    <h5 class="card-title center" id="luke-skywalker">Luke Skywalker</h5>
                     <p class="card-text">
                         <strong>Alliance:</strong> Jedi<br>
                         <strong>Weapon:</strong> Green Light Saber<br>
@@ -48,7 +52,7 @@
             <div class="card zoom player-selection-card mx-auto  mb-2 col-sm-12 col-md-12 col-lg-4">
                 <img class="card-img-top mx-auto" src="assets/images/obiWanKenobi.jpeg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title center" id="jedi">Obi-Wan Kenobi</h5>
+                    <h5 class="card-title center" id="obi-wan-kenobi">Obi-Wan Kenobi</h5>
                     <p class="card-text">
                         <strong>Alliance:</strong> Jedi<br>
                         <strong>Weapon:</strong>  Blue Light Saber<br>
@@ -60,7 +64,7 @@
             <div class="card zoom player-selection-card mx-auto mb-2 col-sm-12 col-md-12 col-lg-4">
                 <img class="card-img-top mx-auto" src="assets/images/yoda.jpeg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title center" id ="jedi">Yoda</h5>
+                    <h5 class="card-title center" id ="yoda">Yoda</h5>
                     <p class="card-text">
                         <strong>Alliance:</strong> Jedi<br>
                         <strong>Weapon:</strong>  Blaster<br>
@@ -73,12 +77,12 @@
 
 
         <!--ROW 2-->
-        <div class="row">
+        <div class="row" id="character-row-two">
             <!--HAN SOLO-->
             <div class="card zoom player-selection-card mx-auto mb-2 col-sm-12 col-md-12 col-lg-4">
                 <img class="card-img-top mx-auto" src="assets/images/hanSolo.jpeg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title center" id ="jedi">Han Solo</h5>
+                    <h5 class="card-title center" id ="han-solo">Han Solo</h5>
                     <p class="card-text">
                         <strong>Alliance:</strong> Rebels<br>
                         <strong>Weapon:</strong>  Blaster<br>
@@ -92,7 +96,7 @@
             <div class="card zoom player-selection-card mx-auto mb-2 col-sm-12 col-md-12 col-lg-4">
                 <img class="card-img-top mx-auto" src="assets/images/chewbaca.jpeg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title center" id ="jedi">Chewbaca</h5>
+                    <h5 class="card-title center" id ="chewbaca">Chewbaca</h5>
                     <p class="card-text">
                         <strong>Alliance:</strong> Rebels<br>
                         <strong>Weapon:</strong>  Blaster<br>
@@ -105,7 +109,7 @@
             <div class="card zoom player-selection-card mx-auto mb-2 col-sm-12 col-md-12 col-lg-4">
                 <img class="card-img-top mx-auto" src="assets/images/princessLeya.jpeg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title center" id ="jedi">Princess Leya</h5>
+                    <h5 class="card-title center" id ="princess-lea">Princess Leya</h5>
                     <p class="card-text">
                         <strong>Alliance:</strong> Rebels<br>
                         <strong>Weapon:</strong>  Blaster<br>
@@ -117,13 +121,13 @@
         <!--END OF ROW 2-->
 
         <!--ROW 3-->
-        <div class="row">
+        <div class="row" id="character-row-three">
 
             <!--Darth Vadar-->
             <div class="card zoom player-selection-card mx-auto mb-2 col-sm-12 col-md-12 col-lg-4">
                 <img class="card-img-top mx-auto" src="assets/images/darthVadar.jpeg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title center" id ="jedi">Darth Vadar</h5>
+                    <h5 class="card-title center" id ="darth-vadar">Darth Vadar</h5>
                     <p class="card-text">
                         <strong>Alliance:</strong> Rebels<br>
                         <strong>Weapon:</strong>  Blaster<br>
@@ -136,7 +140,7 @@
             <div class="card zoom player-selection-card mx-auto mb-2 col-sm-12 col-md-12 col-lg-4">
                 <img class="card-img-top mx-auto" src="assets/images/darthMaul.jpeg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title center" id ="jedi">Darth Maul</h5>
+                    <h5 class="card-title center" id ="darth-maul">Darth Maul</h5>
                     <p class="card-text">
                         <strong>Alliance:</strong> Rebels<br>
                         <strong>Weapon:</strong>  Blaster<br>
@@ -149,7 +153,7 @@
             <div class="card zoom player-selection-card mx-auto mb-2 col-sm-12 col-md-12 col-lg-4">
                 <img class="card-img-top mx-auto" src="assets/images/countDooku.jpeg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title center" id ="jedi">Count Dooku</h5>
+                    <h5 class="card-title center" id ="count-dooku">Count Dooku</h5>
                     <p class="card-text">
                         <strong>Alliance:</strong> Rebels<br>
                         <strong>Weapon:</strong>  Blaster<br>
@@ -164,8 +168,54 @@
     </div>
     <!--END OF PLAYER SELECTION CONTAINER-->
 
-    <div class="container hidden" id="battle-container">
-        <h1 class="jedi-zero center"> Battle Screen </h1>
+    <div class="container visible" id="battle-container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h1 class="jedi-zero center"> Battle Screen </h1>
+            </div>
+        </div>
+        
+        <div class="row"> 
+            <div class="col-sm-1 col-md-1 col-lg-0 d-xs-block d-none"></div>
+
+            <!--PLAYER--> 
+            <div class="card  player-selection-card mx-auto mb-2 col-sm-5 col-md-5 col-lg-4">
+                <img class="card-img-top mx-auto" id="player-picture"  src="assets/images/lukeSkyWalker.jpg" alt="Card image cap">  
+                <div class="card-body">
+                    <h5 class="card-title center" id="player-name">Luke Skywalker</h5>
+                    <p class="card-text" id="player-health">
+                        <strong>Health:</strong>100<br>
+                    </p>
+                </div>
+            </div>
+
+            <!--ATTACK MESSAGE-->
+            <div class = "col-sm-4 col-md-4 col-lg-4">
+                <span class="jedi-zero  align-middle" id="attack-message">ATTACK MEESAGE</span>
+            </div>
+
+            <!--OPPONENT--> 
+            <div class="card  player-selection-card mx-auto mb-2 col-sm-5 col-md-5 col-lg-4">
+                <img class="card-img-top mx-auto"  id="opponent-picture" src="assets/images/lukeSkyWalker.jpg" alt="Card image cap">  
+                <div class="card-body">
+                    <h5 class="card-title center" id="opponent-name">Luke Skywalker</h5>
+                    <p class="card-text" id="opponent-health">
+                        <strong>Health:</strong>100<br>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-1 col-md-1 col-lg-0 d-xs-block d-none"></div>
+        </div>
+
+        <!--BUTTON ROW-->
+        <div class="row">
+            <div class="col-lg-4">
+                <button class="btn btn-primary">Attack</button>
+            </div>
+            <div class="col-lg-8">
+                
+            </div>
+        </div>
 
     </div>
         
@@ -174,9 +224,9 @@
         <source src="assets/audio/ltsaberswing05.wav"></source>
     </audio>
 
-    <audio  id="starWarsThemeSong" loop="loop">
+    <!-- <audio  id="starWarsThemeSong">
         <source src="assets/audio/star-wars-theme-song.mp3"></source>
-    </audio>
+    </audio> -->
 
    
 

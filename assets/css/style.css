@@ -19,26 +19,18 @@
     font-family: jedi1;
 }
 
+/*PlAYER SLECTION CONTAINER*/
 
 .center{
     text-align: center;
 
 }
 
-/* .zoom{
-    transition: transform .2s;
-}
-.zoom:hover {
-    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) 
-    z-index: 2;
-    border: solid 2px yellow;
-  }  */
-
 body{
 background-image:url('../images/stars.jpg');
 }
 
-p{
+.card-text{
     text-align: left;
 }
 
@@ -47,6 +39,13 @@ p{
     height: 60vw;
     object-fit: cover;
 }
+
+
+/*BATTLE CONTAINER*/
+
+/* #player-attack{
+    vertical-align: middle;
+} */
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
