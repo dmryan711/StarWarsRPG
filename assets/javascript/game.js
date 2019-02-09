@@ -1,40 +1,63 @@
-
-
 //Character Object Constructor
-function Character(cName, cHealth, cImagePath, cSelectedByPlayer,cElementId){
+function Character(cName, cHealth, cImagePath, cSelectedByPlayer, cdefeatedByPlayer,cElementId,cAttackPower, cCounterAttackPower){
     this.name = cName;
     this.health = cHealth;
     this.imagePath = cImagePath;
     this.isSelectedByPlayer = cSelectedByPlayer;
+    this.isDefeatedByPlayer = cdefeatedByPlayer;
     this.elementId = cElementId;
-
+    this.attackPower = cAttackPower;
+    this.counterAttackPower = cCounterAttackPower;
   }
 
+var undefeatedCount = 8;
+
 var characterBank = [];
-
+var indexOfCurrentPlayer;
+var indexOfCurrentOpponent;
 var health = 100;
-var player = {
-    name:"errorPlayerName",
-    health: "errorPlayerHealth",
-    imagePath: "errorPlayerPath"
 
-};
-
-var opponent = {
-    name:"errorOpponentName",
-    health: "errorOpponentHealth",
-    imagePath: "errorOpponentPath"
-
-};
 
 //CLICK EVENT
-$("#battle-container").click(function (){ //NEED TO CHANGE THIS LATER TO QUIT BUTTON
-    console.log("Click battle container");
-    
-    toggleSelectionOrBattleContainer($(this));
-    
+$("#click-to-play").click(function(){
+    hideGameStart();
 });
 
+//ATTACK CLICK
+$("#attack-button").click(function(){
+    $("#attack-message").text(characterBank[indexOfCurrentPlayer].attackPower);
+    console.log(characterBank[indexOfCurrentPlayer].attackPower);
+    $("#attack-message").effect("puff", { }, 1000,function(){
+        $("#attack-message").text("");
+        //counter attack
+        attack(indexOfCurrentOpponent);
+    } );
+    
+    attack(indexOfCurrentPlayer);
+});
+
+function attack(playerOrOpponentIndex){
+
+    if(playerOrOpponentIndex === indexOfCurrentPlayer){
+        characterBank[indexOfCurrentOpponent].health -= characterBank[indexOfCurrentPlayer].attackPower;
+        console.log("Player Attack");
+        loadOpponent(characterBank[indexOfCurrentOpponent]);
+        $("#opponent").effect("shake");
+    }else if(playerOrOpponentIndex === indexOfCurrentOpponent){
+        characterBank[indexOfCurrentPlayer].health -= characterBank[indexOfCurrentOpponent].counterAttackPower;
+        console.log("Opponent Attack");
+        //Update Player UI here
+        loadPlayer(characterBank[indexOfCurrentPlayer]);
+        $("#player").effect("shake");
+    }else{
+        console.log("ERROR IN ATTACK")
+    }
+}
+
+// if (typeof jQuery.ui != 'undefined') {
+//     // UI loaded
+//     console.log("Loaded UI");
+//   }
 
 
 //CLICK EVENT
@@ -44,8 +67,21 @@ $(".player-selection-card").click(function (){
     toggleSelectionOrBattleContainer($(this));
     //playSelectionAudio();
     setBattleContainer($(this));
+    var themeSong = $("#starWarsThemeSong");
+    themeSong.trigger('pause');
+    var battleSong = $("#starWarsBattleSong");
+    battleSong.trigger('play');
     
 });
+
+//HIDE GAME START UI
+function hideGameStart(){
+    var gameStartContainer = $("#game-start-container");
+    gameStartContainer.removeClass('visible').addClass('hidden');
+    $("#player-selection-container").removeClass('hidden').addClass('visible');
+    var themeSong = $("#starWarsThemeSong");
+     themeSong.trigger('play');
+}
 
 //CONTAINER TOGGLE
 function toggleSelectionOrBattleContainer(element){
@@ -68,71 +104,68 @@ function toggleSelectionOrBattleContainer(element){
 
 }
 
-
-
-// function playSelectionAudio(){
-//     var audio = $("#saber") //PERSONALIZED AUDIO CLIPS HERE
-//     audio.trigger('play');
-// }
-
 // BATTLE CONTAINER
 function setBattleContainer(selectedByPlayer){
     var selectedElementId = getElementIdFromSelectionCard(selectedByPlayer);
 
     //Mark the selection as selected in the character bank
     for(var i=0;i<characterBank.length;i++){
-
         if(selectedElementId === characterBank[i].elementId){
             characterBank[i].isSelectedByPlayer = true;
-            console.log("Updated Character bank with selection for: "+ i);
-            console.log(characterBank);
+            //ADD CHARACTER TO PLAYER UI
+            indexOfCurrentPlayer = i;
+            characterBank[i].attackPower = 1;
+            loadPlayer(characterBank[i]);
+            //break;
         }
     }
-
-    //
-    setPlayerAndOpponentObjects();
-    $("#player-health").text(player.health);
-    $("#player-picture").attr('src',player.imagePath);
+    //FIND RANDOM OPPONENT
+    selectRandomOpponent();
 }
 
-    //HELPER FUNCTIONS
-    function setPlayerAndOpponentObjects(){
-        setCharacter(player,"Luke","400","assets/images/darthMaul.jpeg");
-
-    }
 
     function selectRandomOpponent(){
+    //Are all characters defeated?
+      if(undefeatedCount > 0){
 
-    }
-        function setCharacter(characterObject,characterName,characterHealth,characterImagePath){
-            characterObject.name = characterName;
-            characterObject.health = characterHealth;
-            characterObject.imagePath = characterImagePath;
+        
+        //If not pick a character
+        var randomIndex = Math.floor(Math.random()*characterBank.length);
+        var opponent = characterBank[randomIndex];
+
+        //If character is qualified
+        if(!opponent.isDefeatedByPlayer && !opponent.isSelectedByPlayer){
+            //Choose Character
+            indexOfCurrentOpponent = randomIndex;
+            loadOpponent(opponent);
+        //If character is not qualified, try again
+        }else{
+            selectRandomOpponent();
         }
+      }else{
+        //All Characters are defeated, show win message
+      } 
+    }
+
+    function loadOpponent(opponent){
+        $("#opponent-health").text(opponent.health);
+        $("#opponent-picture").attr('src',opponent.imagePath);
+        $("#opponent-name").text(opponent.name);
+    }
+
+    function loadPlayer(player){
+        $("#player-health").text(player.health);
+        $("#player-picture").attr('src',player.imagePath);
+        $("#player-name").text(player.name);
+    }
 
     
 
 $(document).ready(function(){
-    console.log("Theme Song");
-    // var themeSong = $("#starWarsThemeSong");
-    // themeSong.trigger('play');
     addCharacterstoHeroBank();
-    
 
-    // var themeSong = document.createElement('audio');
-    // themeSong.setAttribute('src', 'assets/audio/star-wars-theme-song.mp3');
-    
-    // themeSong.addEventListener('ended', function() {
-    //     this.play();
-    // }, false);
-    
-    // themeSong.addEventListener("canplay",function(){
-    //     this.play();
-    //     // $("#length").text("Duration:" + audioElement.duration + " seconds");
-    //     // $("#source").text("Source:" + audioElement.src);
-    //     $("#audio-status").text("Status: Ready to play");
-    // });
 });
+
     function addCharacterstoHeroBank(){
         iterateThroughCharacterRow($("#character-row-one"));
         iterateThroughCharacterRow($("#character-row-two"));
@@ -142,11 +175,16 @@ $(document).ready(function(){
     }
 
         function iterateThroughCharacterRow(characterRowElement){
+            var counterAttack = 1;
             characterRowElement.children().each(function( index ) {
                 var imagePath = $(this).children('img').attr('src');
                 var name = $(this).children('div').children('h5').text();
                 var elementId = getElementIdFromSelectionCard(this);
-                characterBank.push(new Character(name,health,imagePath,false,elementId));
+                var health = 100;
+                var attack = 0;
+                counterAttack++;
+                characterBank.push(new Character(name,health,imagePath,false,false,elementId,attack,counterAttack));
+                
               }
         
               );
@@ -157,12 +195,10 @@ $(document).ready(function(){
             }
 
 
-// TRYING TO ITERATE THROUGH EACH ELEMENT AND ADD TO OBJECT BANK
-
-// var audio = $("#saber");
-// $(".player-selection-card").hover(function(){
-//     console.log(audio);
-//    audio.trigger('play');
-// });
+var audio = $("#saber");
+$(".player-selection-card").hover(function(){
+    console.log(audio);
+   audio.trigger('play');
+});
 
 

@@ -7,6 +7,7 @@
     <!--BOOTSTRAP CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
    
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <!--CUSTOM CSS-->
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -17,6 +18,30 @@
     
 </head>
 <body>
+    <div class="container visible" id="game-start-container">
+        <!--IMAGE ROW-->
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <img src="assets/images/starwars.png" class="img-fluid" id="game-logo" alt="gamelogo">
+            </div>
+        </div>
+
+        <!--BUTTON ROW-->
+        <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4"></div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4"></div>
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                        <button class="btn btn-warning" id="click-to-play">Play</button>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4"></div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4"></div>
+ 
+        </div>
+    </div>
     <div class="container hidden" id="player-selection-container">
            
         <!--TITLE ROW-->
@@ -43,7 +68,7 @@
                     <p class="card-text">
                         <strong>Alliance:</strong> Jedi<br>
                         <strong>Weapon:</strong> Green Light Saber<br>
-                        <strong>Special Attack:</strong>Force Saber (Damage / Heal)<br>
+                        <!-- <strong>Special Attack:</strong>Force Saber (Damage / Heal)<br> -->
                     </p>
                 </div>
             </div>
@@ -56,7 +81,7 @@
                     <p class="card-text">
                         <strong>Alliance:</strong> Jedi<br>
                         <strong>Weapon:</strong>  Blue Light Saber<br>
-                        <strong>Special Attack:</strong> Force Mediate (Healing)<br>
+                        <!-- <strong>Special Attack:</strong> Force Mediate (Healing)<br> -->
                     </p>
                 </div>
             </div>
@@ -67,8 +92,8 @@
                     <h5 class="card-title center" id ="yoda">Yoda</h5>
                     <p class="card-text">
                         <strong>Alliance:</strong> Jedi<br>
-                        <strong>Weapon:</strong>  Blaster<br>
-                        <strong>Special Attack:</strong>Triple Blast (Damage)<br>
+                        <strong>Weapon:</strong>Green Light Saber<br>
+                        <!-- <strong>Special Attack:</strong>Triple Blast (Damage)<br> -->
                     </p>
                 </div>
             </div>
@@ -85,8 +110,8 @@
                     <h5 class="card-title center" id ="han-solo">Han Solo</h5>
                     <p class="card-text">
                         <strong>Alliance:</strong> Rebels<br>
-                        <strong>Weapon:</strong>  Blaster<br>
-                        <strong>Special Attack:</strong>Triple Blast (Damage)<br>
+                        <strong>Weapon:</strong> Blaster<br>
+                        <!-- <strong>Special Attack:</strong>Triple Blast (Damage)<br> -->
                     </p>
                 </div>
             </div>
@@ -99,8 +124,8 @@
                     <h5 class="card-title center" id ="chewbaca">Chewbaca</h5>
                     <p class="card-text">
                         <strong>Alliance:</strong> Rebels<br>
-                        <strong>Weapon:</strong>  Blaster<br>
-                        <strong>Special Attack:</strong>Triple Blast (Damage)<br>
+                        <strong>Weapon:</strong> I mean, look at him<br>
+                        <!-- <strong>Special Attack:</strong>Triple Blast (Damage)<br> -->
                     </p>
                 </div>
             </div>
@@ -113,7 +138,7 @@
                     <p class="card-text">
                         <strong>Alliance:</strong> Rebels<br>
                         <strong>Weapon:</strong>  Blaster<br>
-                        <strong>Special Attack:</strong>Triple Blast (Damage)<br>
+                        <!-- <strong>Special Attack:</strong>Triple Blast (Damage)<br> -->
                     </p>
                 </div>
             </div>       
@@ -129,9 +154,9 @@
                 <div class="card-body">
                     <h5 class="card-title center" id ="darth-vadar">Darth Vadar</h5>
                     <p class="card-text">
-                        <strong>Alliance:</strong> Rebels<br>
-                        <strong>Weapon:</strong>  Blaster<br>
-                        <strong>Special Attack:</strong>Triple Blast (Damage)<br>
+                        <strong>Alliance:</strong> Sith<br>
+                        <strong>Weapon:</strong>  Red Light Saber<br>
+                        <!-- <strong>Special Attack:</strong>Triple Blast (Damage)<br> -->
                     </p>
                 </div>
             </div>
@@ -142,9 +167,9 @@
                 <div class="card-body">
                     <h5 class="card-title center" id ="darth-maul">Darth Maul</h5>
                     <p class="card-text">
-                        <strong>Alliance:</strong> Rebels<br>
-                        <strong>Weapon:</strong>  Blaster<br>
-                        <strong>Special Attack:</strong>Triple Blast (Damage)<br>
+                        <strong>Alliance:</strong> Sith<br>
+                        <strong>Weapon:</strong>  Dual-Blade Saber<br>
+                        <!-- <strong>Special Attack:</strong>Triple Blast (Damage)<br> -->
                     </p>
                 </div>
             </div>
@@ -155,9 +180,9 @@
                 <div class="card-body">
                     <h5 class="card-title center" id ="count-dooku">Count Dooku</h5>
                     <p class="card-text">
-                        <strong>Alliance:</strong> Rebels<br>
-                        <strong>Weapon:</strong>  Blaster<br>
-                        <strong>Special Attack:</strong>Triple Blast (Damage)<br>
+                        <strong>Alliance:</strong> Sith<br>
+                        <strong>Weapon:</strong>  Curved Light Saber<br>
+                        <!-- <strong>Special Attack:</strong>Triple Blast (Damage)<br> -->
                     </p>
                 </div>
             </div>
@@ -168,7 +193,7 @@
     </div>
     <!--END OF PLAYER SELECTION CONTAINER-->
 
-    <div class="container visible" id="battle-container">
+    <div class="container hidden" id="battle-container">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <h1 class="jedi-zero center"> Battle Screen </h1>
@@ -179,7 +204,7 @@
             <div class="col-sm-1 col-md-1 col-lg-0 d-xs-block d-none"></div>
 
             <!--PLAYER--> 
-            <div class="card  player-selection-card mx-auto mb-2 col-sm-5 col-md-5 col-lg-4">
+            <div class="card  mx-auto mb-2 col-sm-5 col-md-5 col-lg-4" id="player">
                 <img class="card-img-top mx-auto" id="player-picture"  src="assets/images/lukeSkyWalker.jpg" alt="Card image cap">  
                 <div class="card-body">
                     <h5 class="card-title center" id="player-name">Luke Skywalker</h5>
@@ -190,12 +215,18 @@
             </div>
 
             <!--ATTACK MESSAGE-->
-            <div class = "col-sm-4 col-md-4 col-lg-4">
-                <span class="jedi-zero  align-middle" id="attack-message">ATTACK MEESAGE</span>
+            <div class = "col-sm-4 col-md-4 col-lg-4 align-self-center">
+                <div class="row align-items-center">
+                    <div class="col-sm-4 col-md-4 col-lg-4"></div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 jedi-zero align-self-center" id="attack-message">
+                        
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 test"></div>
+                </div>
             </div>
 
             <!--OPPONENT--> 
-            <div class="card  player-selection-card mx-auto mb-2 col-sm-5 col-md-5 col-lg-4">
+            <div class="card  mx-auto mb-2 col-sm-5 col-md-5 col-lg-4" id="opponent">
                 <img class="card-img-top mx-auto"  id="opponent-picture" src="assets/images/lukeSkyWalker.jpg" alt="Card image cap">  
                 <div class="card-body">
                     <h5 class="card-title center" id="opponent-name">Luke Skywalker</h5>
@@ -210,7 +241,7 @@
         <!--BUTTON ROW-->
         <div class="row">
             <div class="col-lg-4">
-                <button class="btn btn-primary">Attack</button>
+                <button class="btn btn-primary" id="attack-button">Attack</button>
             </div>
             <div class="col-lg-8">
                 
@@ -224,19 +255,28 @@
         <source src="assets/audio/ltsaberswing05.wav"></source>
     </audio>
 
-    <!-- <audio  id="starWarsThemeSong">
+    <audio  id="starWarsThemeSong">
         <source src="assets/audio/star-wars-theme-song.mp3"></source>
-    </audio> -->
+    </audio>
+
+    <audio  id="starWarsBattleSong">
+        <source src="assets/audio/Star-Wars-Duel-of-the-Fates.mp3"></source>
+    </audio>
 
    
 
     <!--BOOTSTRAP JS-->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  
-  <!--GAME LOGIC-->
+    
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      <!--GAME LOGIC-->
   <script src="assets/javascript/game.js"></script>
 </body>
 </html>

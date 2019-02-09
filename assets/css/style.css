@@ -4,7 +4,9 @@
 @font-face { font-family: jedi3; src: url('fonts/SF_Distant_Galaxy_Outline_Italic.ttf'); } 
 @font-face { font-family: jedi4; src: url('fonts/Starjedi.ttf'); } 
 
-
+/* #game-logo{
+    object-fit:cover;
+} */
 .jedi-zero{
     font-family: jedi0;
     color:yellow;
@@ -26,13 +28,29 @@
 
 }
 
+.vertical-center {
+    position: relative;
+    min-height: 100%;  
+    min-height: 100vh; 
+}    
+
 body{
 background-image:url('../images/stars.jpg');
 }
 
 .card-text{
     text-align: left;
+
 }
+
+.card-title{
+    font-family:jedi1;
+}
+
+button{
+    font-family:jedi1;
+}
+
 
 .card-img-top {
     width: 100%;
@@ -133,7 +151,10 @@ background-image:url('../images/stars.jpg');
         transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
         z-index: 2;
         border: solid 2px yellow;
+        font-size: 12pt;
       }
+
+      
 
     
 }
