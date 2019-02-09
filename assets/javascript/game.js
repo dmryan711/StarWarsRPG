@@ -18,6 +18,8 @@ var health = 5;
 var playerHealth = 15;
 var counterAttack = 1;
 var playerAttack = 5;
+var themeSong;
+var battleSong;
 
 
 //CLICK EVENT
@@ -131,9 +133,9 @@ $(".player-selection-card").click(function (){
     
     toggleSelectionOrBattleContainer($(this));
     setBattleContainer($(this));
-    var themeSong = $("#starWarsThemeSong");
+    themeSong = $("#starWarsThemeSong");
     themeSong.trigger('pause');
-    var battleSong = $("#starWarsBattleSong");
+    battleSong = $("#starWarsBattleSong");
     battleSong.trigger('play');
     
 });
@@ -246,6 +248,7 @@ function restartGameWithModal(modalBool){
         characterBank.length = 0;
         counterAttack = 1;
         health = 10;
+        battleSong.trigger('pause');
         $("#battle-container").removeClass('visible').addClass('hidden');
         hideGameStart();
         addCharacterstoHeroBank();
