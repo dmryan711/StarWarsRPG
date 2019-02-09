@@ -12,6 +12,10 @@
     color:yellow;
 }
 
+.jedi-one{
+    font-family: jedi1;
+}
+
 .hidden{
     display: none;
 }
@@ -61,9 +65,9 @@ button{
 
 /*BATTLE CONTAINER*/
 
-/* #player-attack{
-    vertical-align: middle;
-} */
+ #attack-messafe{
+    text-align: center;
+} 
 
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
