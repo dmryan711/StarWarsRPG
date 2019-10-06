@@ -20,6 +20,13 @@
     display: none;
 }
 
+.test{
+    background-color:blue;
+}
+
+.test2{
+    background-color: blueviolet;
+}
 
 #jedi{
     font-family: jedi1;
